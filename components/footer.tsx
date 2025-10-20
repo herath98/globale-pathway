@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -8,15 +9,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">GP</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg">GLOBLE PATHWAY</div>
-                <div className="text-xs text-accent">International</div>
-              </div>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-32 h-28 mb-2 rounded flex items-center justify-center shadow-lg group-hover:shadow-xl transition overflow-hidden bg-white/0">
+              {/* Logo image (SVG preferred) with accessible alt. Fallback initials shown for non-image contexts. */}
+              <Image src="/logo.jpg" alt="Global Pathway logo" width={150} height={150} className="object-contain" />
+            
+             
             </div>
+            <div className="hidden sm:block">
+           
+            </div>
+          </Link>
             <p className="text-sm text-secondary-foreground/80">
               Your trusted partner in global education and career advancement.
             </p>

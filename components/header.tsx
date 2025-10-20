@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 
@@ -30,14 +31,16 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-28">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition">
-              <span className="text-white font-bold text-lg">GP</span>
+            <div className="w-28 h-28 rounded flex items-center justify-center shadow-lg group-hover:shadow-xl transition overflow-hidden bg-white/0">
+              {/* Logo image (SVG preferred) with accessible alt. Fallback initials shown for non-image contexts. */}
+              <Image src="/logo.jpg" alt="Global Pathway logo" width={150} height={150} className="object-contain" />
+            
+             
             </div>
             <div className="hidden sm:block">
-              <div className="font-bold text-lg bg-gradient-to-tr from-secondary to-primary px-2 py-1 rounded text-white">GLOBLE PATHWAY</div>
-              <div className="text-xs text-primary font-semibold">International</div>
+           
             </div>
           </Link>
 
